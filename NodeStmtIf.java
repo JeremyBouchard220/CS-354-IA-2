@@ -1,3 +1,5 @@
+//Handles instances where an If is made.
+
 public class NodeStmtIf extends NodeStmt
 {
     private NodeStmt expr;

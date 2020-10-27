@@ -1,3 +1,5 @@
+//Handles instances where an Assn is made.
+
 public class NodeStmtAssn extends NodeStmt
 {
     private NodeExpr expr;

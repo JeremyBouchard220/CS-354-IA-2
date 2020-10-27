@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+//Handles instances where a Read is made.
+
 public class NodeStmtRead extends NodeStmt
 {
     private String read;

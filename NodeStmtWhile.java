@@ -1,3 +1,5 @@
+//Handles situations where a While is made
+
 public class NodeStmtWhile extends NodeStmt 
 {
     private NodeBoolExpr whileBool;

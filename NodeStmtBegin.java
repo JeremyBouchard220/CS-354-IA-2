@@ -1,3 +1,5 @@
+//Handles instances where a Begin is made.
+
 public class NodeStmtBegin extends NodeStmt
 {
     private NodeBlock block;

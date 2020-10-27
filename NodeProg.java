@@ -1,3 +1,5 @@
+//Handles situations where a Prog is called
+
 public class NodeProg extends Node
 {
     private NodeBlock block;

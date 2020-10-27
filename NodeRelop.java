@@ -1,3 +1,5 @@
+//Handles instances where a Relop is called
+
 public class NodeRelop extends Node
 {
     private String relop;

@@ -1,3 +1,5 @@
+//Handles situations where a Write is made
+
 public class NodeStmtWrite extends NodeStmt
 {
     private NodeExpr write;

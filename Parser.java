@@ -88,7 +88,8 @@ public class Parser {
 	return expr;
     }
 
-    private NodeAssn parseAssn() throws SyntaxException {
+	//May not be needed, we'll see.
+	private NodeAssn parseAssn() throws SyntaxException {
 	Token id=curr();
 	match("id");
 	match("=");
@@ -97,6 +98,7 @@ public class Parser {
 	return assn;
 	}
 	
+	//Might still need tweaking
 	private NodeBoolExpr parseBoolExpr() throws SyntaxException
 	{
 		NodeExpr leftHandSide = parseExpr();
@@ -105,6 +107,7 @@ public class Parser {
         return new NodeBoolExpr(leftHandSide, relop, rightHandSide);
 	}
 
+	//Might still need tweaking
 	private NodeRelop parseRelop() throws SyntaxException
 	{
 		if(curr().equals(new Token("==")))
@@ -149,6 +152,7 @@ public class Parser {
 	// return stmt;
 	// }
 	
+	//Might still need tweaking.
 	private NodeStmt parseStmt() throws SyntaxException
     {
         if(curr().equals(new Token("id"))) 
@@ -222,6 +226,7 @@ public class Parser {
 		
 	}
 
+	//Might still need tweaking.
 	public NodeBlock parseBlock() throws SyntaxException
 	{
 		NodeStmt parse = parseStmt();
