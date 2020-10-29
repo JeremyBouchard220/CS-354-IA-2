@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class NodeStmtRead extends NodeStmt
 {
     private String read;
-    private Scanner scan;
+    private static Scanner scan = null;
 
     public NodeStmtRead(String id)
     {
@@ -14,7 +14,10 @@ public class NodeStmtRead extends NodeStmt
 
     public double eval (Environment env) throws EvalException
     {
-        scan = new Scanner(System.in);
+        if(scan == null)
+        {
+            scan = new Scanner(System.in);
+        }
         return env.put(read, scan.nextDouble());
     }
 }

@@ -163,7 +163,7 @@ public class Parser {
 			NodeExpr expr = parseExpr();
 			return new NodeStmtAssn(expr, id.lex());
 		}
-		if(curr().equals(new Token("rd"))) 
+		if(curr().equals(new Token("rd")))
 		{
 			match("rd");
 			Token id = curr();
