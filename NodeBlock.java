@@ -11,7 +11,7 @@ public class NodeBlock extends Node
 
     public double eval (Environment env) throws EvalException
     {
-        Double eval = block.eval(env);
+        Double eval = check.eval(env);
         if(block != null)
         {
             return block.eval(env);

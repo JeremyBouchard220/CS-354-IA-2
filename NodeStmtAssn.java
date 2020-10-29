@@ -3,14 +3,17 @@
 public class NodeStmtAssn extends NodeStmt
 {
     private NodeExpr expr;
+    private String string;
 
-    public NodeStmtAssn(NodeExpr expr2)
+    public NodeStmtAssn(NodeExpr expr2, String string)
     {
         this.expr = expr2;
+        this.string = string;
     }
 
     public double eval (Environment env) throws EvalException
     {
-        return expr.eval(env);
+        //return expr.eval(env);
+        return env.put(string, expr.eval(env));
     }
 }

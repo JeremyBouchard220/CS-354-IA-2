@@ -155,13 +155,13 @@ public class Parser {
 	//Might still need tweaking.
 	private NodeStmt parseStmt() throws SyntaxException
     {
-        if(curr().equals(new Token("id"))) 
+		if(curr().equals(new Token("id"))) 
 		{
 			Token id = curr();
 			match("id");
 			match("=");
 			NodeExpr expr = parseExpr();
-			return new NodeStmtAssn(expr);
+			return new NodeStmtAssn(expr, id.lex());
 		}
 		if(curr().equals(new Token("rd"))) 
 		{
@@ -213,18 +213,16 @@ public class Parser {
 		return new NodeStmtBegin(block);
     }
 
-	public NodeProg parseProg() throws SyntaxException
-	{
-		NodeBlock assn = parseBlock();
-		if(!scanner.done())
-		{
-			throw new SyntaxException(pos(),new Token("EOF"), curr());
-		}
-		NodeProg prog=new NodeProg(assn);
+	// public NodeProg parseProg() throws SyntaxException
+	// {
+	// 	NodeBlock assn = parseBlock();
+	// 	if(!scanner.done())
+	// 	{
+	// 		throw new SyntaxException(pos(),new Token("EOF"), curr());
+	// 	}
+	// 	return new NodeProg(assn);
 		
-		return prog;
-		
-	}
+	// }
 
 	//Might still need tweaking.
 	public NodeBlock parseBlock() throws SyntaxException
@@ -242,9 +240,9 @@ public class Parser {
 	public Node parse(String program) throws SyntaxException {
 	scanner=new Scanner(program);
 	scanner.next();
-	NodeStmt stmt=parseStmt();
-	match("EOF");
-	return stmt;
+	//NodeBlock block=parseBlock();
+	//match("EOF");
+	return parseBlock();
 	}
 
 }

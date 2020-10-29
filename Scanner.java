@@ -58,7 +58,15 @@ public class Scanner {
 
 	private void initKeywords(Set<String> s) 
 	{
-		//
+		s.add("rd");
+		s.add("wr");
+		s.add("if");
+		s.add("then");
+		s.add("else");
+		s.add("while");
+		s.add("do");
+		s.add("begin"); 
+		s.add("end");
 	}
 	
 	private void initComments(Set<String> s)
@@ -102,10 +110,17 @@ public class Scanner {
 
     // scan various kinds of lexeme
 
-    private void nextNumber() {
-	int old=pos;
-	many(digits);
-	token=new Token("num",program.substring(old,pos));
+	private void nextNumber() 
+	{
+		String decimal = ".";
+		int old=pos;
+		many(digits);
+		if(decimal.equals(program.substring(pos,pos+1)))
+		{
+			pos++;
+			many(digits);
+		}
+		token=new Token("num",program.substring(old,pos));
     }
 
     private void nextKwId() {
