@@ -11,7 +11,8 @@ public class NodeStmtWrite extends NodeStmt
 
     public double eval (Environment env) throws EvalException
     {
-        System.out.println(write.eval(env));
-        return write.eval(env);
+        Double output = write.eval(env);
+        System.out.println(output);
+        return output;
     }
 }
