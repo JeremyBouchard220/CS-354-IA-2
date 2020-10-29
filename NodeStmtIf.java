@@ -6,7 +6,7 @@ public class NodeStmtIf extends NodeStmt
     private NodeStmt expr2;
     private NodeBoolExpr boolExpr;
 
-    public NodeStmtIf(NodeStmt expr, NodeBoolExpr boolExp, NodeStmt expr2)
+    public NodeStmtIf(NodeStmt expr, NodeBoolExpr boolExpr, NodeStmt expr2)
     {
         this.expr = expr;
         this.expr2 = expr2;

@@ -45,15 +45,22 @@ public class Scanner {
 	s.addAll(digits);
     }
 
-    private void initOperators(Set<String> s) {
-	s.add("=");
-	s.add("+");
-	s.add("-");
-	s.add("*");
-	s.add("/");
-	s.add("(");
-	s.add(")");
-	s.add(";");
+	private void initOperators(Set<String> s) 
+	{
+		s.add("=");
+		s.add("+");
+		s.add("-");
+		s.add("*");
+		s.add("/");
+		s.add("(");
+		s.add(")");
+		s.add(";");
+		s.add("==");
+		s.add(">");
+		s.add("<");
+		s.add(">=");
+		s.add("<=");
+		s.add("<>");
     }
 
 	private void initKeywords(Set<String> s) 
@@ -96,8 +103,9 @@ public class Scanner {
 	return pos>=program.length();
     }
 
-    private void many(Set<String> s) {
-	while (!done() && s.contains(program.charAt(pos)+""))
+	private void many(Set<String> s) 
+	{
+		while (!done() && s.contains(program.charAt(pos)+""))
 	    pos++;
     }
     

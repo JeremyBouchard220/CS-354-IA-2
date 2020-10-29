@@ -193,7 +193,7 @@ public class Parser {
 			}
 			else
 			{
-				return new NodeStmtIf(ifThenStmt, null, ifThenStmt);
+				return new NodeStmtIf(ifThenStmt, boolexpr, null);
 			}
 		}
 
