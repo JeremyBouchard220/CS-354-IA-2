@@ -1,3 +1,5 @@
+//Allows for boolean expressions to be used
+
 public class NodeBoolExpr extends Node
 {
     private NodeExpr expr;

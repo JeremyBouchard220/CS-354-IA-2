@@ -120,7 +120,6 @@ public class Scanner {
 
 	private void nextNumber() 
 	{
-		//String decimal = ".";
 		int old=pos;
 		many(digits);
 		if(!done() && program.charAt(pos)=='.')

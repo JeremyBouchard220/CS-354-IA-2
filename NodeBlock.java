@@ -1,3 +1,5 @@
+//Allows for Blocks to be made
+
 public class NodeBlock extends NodeStmt
 {
     private NodeBlock block;

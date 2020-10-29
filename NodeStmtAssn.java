@@ -13,7 +13,6 @@ public class NodeStmtAssn extends NodeStmt
 
     public double eval (Environment env) throws EvalException
     {
-        //return expr.eval(env);
         return env.put(string, expr.eval(env));
     }
 }
